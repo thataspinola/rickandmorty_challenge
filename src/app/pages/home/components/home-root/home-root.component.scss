@@ -1,0 +1,75 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 210px;
+  background-color: #00B5CC;
+}
+
+.sidenav .mat-toolbar {
+  background-color: #00B5CC;
+
+}
+
+.mat-toolbar.mat-primary {
+  display: none;
+
+  @media screen and (max-width: 750px) {
+  background-color: #00B5CC;
+
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+.user-pic {
+  margin: 44px 0px 21px 0px;
+  height: 200px;
+  width: 200px;
+  background-color: #ffffff;
+  border-radius: 60%;
+  background-image: url('../../../../../assets/rick_profile.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.user-name {
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+}
+
+.exit-button {
+  border: none;
+  height: auto;
+  width: auto;
+  background: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0px 20px 20px 0px;
+
+  mat-icon {
+    color: #ffffff;
+  }
+}
+
+.list-container {
+  display: flex;
+}
+
+.icon-list {
+  color: #ffffff;
+  font-size: 27px;
+  width: 27px;
+  margin-right: 12px;
+}
+
+.icon-title {
+  font-size: 18px;
+  color: #ffffff;
+}
