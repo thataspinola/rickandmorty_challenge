@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { Router } from "@angular/router";
+
 import { CharacterInterface } from "../../../../core/interfaces/characters/character.interface";
 import { ManageCharactersService } from "../../../../core/services/characters/manage-characters/manage-characters.service";
 
@@ -11,7 +12,7 @@ import { ManageCharactersService } from "../../../../core/services/characters/ma
 export class CardMenuComponent {
   @Input() dataCard: CharacterInterface;
 
-  // Default character object to prevent potential null reference errors
+  // Objeto de caractere padrão para evitar possíveis erros de referência nula
   constructor(private router: Router, private manageCharacterService: ManageCharactersService) {
     this.dataCard = {
       id: 0,
@@ -35,7 +36,7 @@ export class CardMenuComponent {
     };
   }
 
-  // Function called when the "Ver Mais" button is clicked
+  // Função chamada quando o botão "Ver Mais" é clicado
   onClick() {
     this.router.navigate(['home/characters-details', this.dataCard!.id]);
   }

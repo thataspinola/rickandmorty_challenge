@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { EpisodeInterface } from '../../../interfaces/episodes/episodes.interface';
 import { ApiRequesteInterface } from '../../../interfaces/api-request/api-request.interface';
 import { CharacterInterface } from '../../../interfaces/characters/character.interface';

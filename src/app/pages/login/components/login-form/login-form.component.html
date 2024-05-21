@@ -5,18 +5,18 @@
     <input formControlName="email" id="email" type="text" placeholder="user@gmail.com">
     <div>
       <!-- Email validation errors -->
-      <mat-error *ngIf="loginFormGroup.get('email')?.hasError('required') && loginFormGroup.get('email')?.touched">Email required</mat-error>
-      <mat-error *ngIf="loginFormGroup.get('email')?.hasError('email') && loginFormGroup.get('email')?.touched">Valid email required</mat-error>
+      <mat-error *ngIf="loginFormGroup.get('email')?.hasError('required') && loginFormGroup.get('email')?.touched">Email obrigatório</mat-error>
+      <mat-error *ngIf="loginFormGroup.get('email')?.hasError('email') && loginFormGroup.get('email')?.touched">É necessário um email válido</mat-error>
     </div>
   </div>
 
   <!-- Password form -->
   <div>
-    <label for="password">Password</label>
+    <label for="password">Senha</label>
     <input formControlName="password" id="password" type="password" placeholder="***">
     <div>
       <!-- Password validation errors -->
-      <mat-error *ngIf="loginFormGroup.get('password')?.hasError('required') && loginFormGroup.get('password')?.touched">Password required</mat-error>
+      <mat-error *ngIf="loginFormGroup.get('password')?.hasError('required') && loginFormGroup.get('password')?.touched">Senha obrigatória</mat-error>
     </div>
   </div>
 </form>
@@ -28,5 +28,5 @@
   </button>
 
   <!-- Display error message if login is invalid -->
-  <mat-error *ngIf="loginInvalid">Error!! Invalid credentials.</mat-error>
+  <mat-error *ngIf="loginInvalid">Error!! Credenciais inválidas.</mat-error>
 </div>

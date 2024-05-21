@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { CharacterInterface } from '../../../../core/interfaces/characters/character.interface';
 
+import { CharacterInterface } from '../../../../core/interfaces/characters/character.interface';
 
 @Component({
   selector: 'app-list-favorites-root',
   templateUrl: './list-favorites-root.component.html',
-  styleUrls: ['./list-favorites-root.component.scss'] // Corrigido: styleUrls em vez de styleUrl
+  styleUrls: ['./list-favorites-root.component.scss']
 })
 export class ListFavoritesRootComponent implements OnInit {
   listCharacters: CharacterInterface[] = []; // Adicione a lista de personagens favoritos

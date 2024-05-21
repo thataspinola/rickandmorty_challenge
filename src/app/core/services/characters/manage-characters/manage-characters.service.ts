@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { CharacterInterface } from '../../../interfaces/characters/character.interface';
 import { ListCharactersService } from '../list-characters/list-characters.service';
-import { Observable } from 'rxjs';
 import { EpisodeInterface } from '../../../interfaces/episodes/episodes.interface';
 
 @Injectable({

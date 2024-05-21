@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ListFavoritesRootComponent } from './list-favorites-root.component';
 
 describe('ListFavoritesRootComponent', () => {

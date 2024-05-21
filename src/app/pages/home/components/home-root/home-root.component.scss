@@ -9,15 +9,13 @@
 
 .sidenav .mat-toolbar {
   background-color: #00B5CC;
-
 }
 
 .mat-toolbar.mat-primary {
   display: none;
 
   @media screen and (max-width: 750px) {
-  background-color: #00B5CC;
-
+    background-color: #00B5CC;
     display: block;
     position: sticky;
     top: 0;

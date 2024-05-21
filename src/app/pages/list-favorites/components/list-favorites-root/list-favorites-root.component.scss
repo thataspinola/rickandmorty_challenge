@@ -24,7 +24,6 @@
   }
 }
 
-
 .input-search {
   width: 100%;
   max-width: 1000px;
@@ -46,17 +45,14 @@
   border-left: none;
 }
 
-
 #skeleton-cards-container,#cards-container{
-
   @media screen and (max-width: 900px) {
    display: flex;
    justify-content: center;
   }
+
   @media screen and (min-width: 2100px) {
     display: flex;
     justify-content: center;
-   }
+  }
 }
-
-

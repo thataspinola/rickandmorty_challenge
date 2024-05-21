@@ -1,68 +1,63 @@
 <mat-sidenav-container class="sidenav-container">
-  <!-- Container for the sidebar and the main content -->
+  <!-- Contêiner para a barra lateral e o conteúdo principal -->
 
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <!-- Sidebar with dynamic settings based on screen width -->
-
+    <!-- Barra lateral com configurações dinâmicas baseadas na largura da tela -->
     <!-- Avatar Icon -->
     <div class="d-flex justify-content-center">
-      <!-- Container for the avatar icon -->
+      <!-- Container para o icone do avatar -->
       <div class="user-pic">
       </div>
     </div>
 
-    <!-- Name User -->
+    <!-- Nome do Usuário -->
     <h1 class="user-name">Rick Sanchez</h1>
-    <!-- User name displayed in the sidebar -->
+    <!-- Nome de usuário exibido na barra lateral -->
 
-    <!-- List Navigators -->
+    <!-- Listar navegadores -->
     <mat-nav-list>
-      <!-- List of navigation links -->
-
+      <!-- Lista de links de navegação -->
       <a mat-list-item class="list-container" [routerLink]="['/home/list-characters']">
-        <!-- Link to the list of characters -->
+        <!-- Link para a lista de personagens -->
         <mat-icon class="icon-list">home</mat-icon>
-        <!-- Icon for the home page -->
+        <!-- Ícone da página inicial -->
         <span class="icon-title">Home</span>
-        <!-- Descriptive text for the home page -->
+        <!-- Texto descritivo da página inicial -->
       </a>
 
       <a mat-list-item [routerLink]="['/home/list-favorite']" class="list-container">
-        <!-- Link to the list of favorites -->
+        <!-- Link para a lista de favoritos -->
         <mat-icon class="icon-list">favorite</mat-icon>
-        <!-- Icon for the favorites page -->
+        <!-- Ícone da página de favoritos -->
         <span class="icon-title">Favorites</span>
-        <!-- Descriptive text for the favorites page -->
+        <!-- Texto descritivo da página de favoritos -->
       </a>
-
     </mat-nav-list>
 
-    <!-- Exit Button -->
+    <!-- Botão Sair -->
     <button class="exit-button" (click)="onClick()">
-      <!-- Exit button with associated click function -->
+      <!-- Botão Sair com função de clique associada -->
       <mat-icon>exit_to_app</mat-icon>
-      <!-- Exit icon -->
+      <!-- Ícone de saída -->
     </button>
-
   </mat-sidenav>
 
-  <!-- Content -->
+  <!-- Conteúdo -->
   <mat-sidenav-content>
-    <!-- Main content of the application -->
-
+    <!-- Conteúdo principal do aplicativo -->
     <mat-toolbar color="primary">
-      <!-- Toolbar with primary color -->
+      <!-- Barra de ferramentas com cor primária -->
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <!-- Button to toggle the sidebar on mobile devices -->
+        <!-- Botão para alternar a barra lateral em dispositivos móveis -->
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        <!-- Icon for the sidebar toggle button -->
+        <!-- Ícone do botão de alternância da barra lateral -->
       </button>
     </mat-toolbar>
 
-    <!-- Content -->
+    <!-- Conteúdo -->
     <router-outlet></router-outlet>
-    <!-- Component to dynamically display content based on routes -->
+    <!-- Componente para exibir conteúdo dinamicamente com base em rotas -->
   </mat-sidenav-content>
 </mat-sidenav-container>

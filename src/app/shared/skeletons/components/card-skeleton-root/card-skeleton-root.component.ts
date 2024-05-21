@@ -5,5 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './card-skeleton-root.component.html',
   styleUrls: ['./card-skeleton-root.component.scss']
 })
-export class CardSkeletonRootComponent {
-}
+export class CardSkeletonRootComponent {}

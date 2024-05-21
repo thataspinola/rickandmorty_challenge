@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+
 import { ApiRequesteInterface } from '../../../../core/interfaces/api-request/api-request.interface';
 import { CharacterInterface } from '../../../../core/interfaces/characters/character.interface';
 import { ListCharactersService } from '../../../../core/services/characters/list-characters/list-characters.service';
@@ -11,7 +12,6 @@ import { ManageCharactersService } from '../../../../core/services/characters/ma
   styleUrls: ['./list-charecters-root.component.scss']
 })
 export class ListCharectersRootComponent implements OnInit {
-
   mockData = Array.from({ length: 20 });
   infoApi: ApiRequesteInterface | undefined;
   listCharacters: Array<CharacterInterface> = [];
@@ -32,15 +32,15 @@ export class ListCharectersRootComponent implements OnInit {
   getCharacters() {
     firstValueFrom<ApiRequesteInterface>(this.listCharacterService.getCharacters())
       .then((data) => {
-        // Initialize listCharacters, infoApi, and listFilteredCharacters
+        // Inicializa listCharacters, infoApi e listFilteredCharacters
         this.listCharacters = data.results;
         this.infoApi = data;
         this.listFilteredCharacters = data.results;
 
-        // Set listFilteredCharacters in manageCharactersService
+        // Definir listFilteredCharacters em manageCharactersService
         this.manageCharactersService.setListCharacters(this.listFilteredCharacters);
 
-        // Set a timeout to simulate loading time and update isLoading
+        // Defina um tempo limite para simular o tempo de carregamento e atualizar isLoading
         setTimeout(() => {
           this.isLoading = false;
         }, 1000);
@@ -54,7 +54,7 @@ export class ListCharectersRootComponent implements OnInit {
   }
 
   filterCharacters() {
-    // Filter characters based on the search input
+    // Filtrar caracteres com base na entrada de pesquisa
     this.listFilteredCharacters = this.listCharacters.filter((character: CharacterInterface) => {
       const characterName = character.name.toLowerCase();
       return characterName.includes(this.searchTerm.toLowerCase());
@@ -64,29 +64,29 @@ export class ListCharectersRootComponent implements OnInit {
   onScroll() {
     if (this.infoApi?.info.next) {
       this.isLoadingScroll = true;
-      // Fetch next set of characters when scrolling
+      // Busca o próximo conjunto de caracteres ao rolar
       firstValueFrom(this.listCharacterService.getNextOrPrevCharacters(this.infoApi.info.next))
-        .then((data) => {
-          this.infoApi = data;
-          const newCharacters = data.results;
+      .then((data) => {
+        this.infoApi = data;
+        const newCharacters = data.results;
 
-          // Combine existing characters with new characters
-          this.listCharacters = [...this.listCharacters, ...newCharacters];
+        // Combine personagens existentes com novos personagens
+        this.listCharacters = [...this.listCharacters, ...newCharacters];
 
-          setTimeout(() => {
-                      // Filter characters based on the search input
+        setTimeout(() => {
+          // Filtrar caracteres com base na entrada de pesquisa
           this.listFilteredCharacters = this.listCharacters.filter((character: CharacterInterface) => {
             const characterName = character.name.toLowerCase();
             return characterName.includes(this.searchTerm.toLowerCase());
           });
+
           this.isLoadingScroll = false;
-          }, 1000);
-        })
-        .catch((error) => {
-          this.isLoadingScroll = false;
-          console.log(error);
-        });
+        }, 1000);
+      })
+      .catch((error) => {
+        this.isLoadingScroll = false;
+        console.log(error);
+      });
     }
   }
-
 }

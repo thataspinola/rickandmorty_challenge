@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { ManageCharactersService } from './manage-characters.service';
 
 describe('ManageCharactersService', () => {

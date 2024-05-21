@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { ListCharactersService } from './list-characters.service';
 
 describe('ListCharactersService', () => {

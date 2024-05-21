@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { firstValueFrom, forkJoin } from 'rxjs';
+
 import { EpisodeInterface } from '../../../../core/interfaces/episodes/episodes.interface';
 import { CharacterInterface } from '../../../../core/interfaces/characters/character.interface';
 import { ManageCharactersService } from '../../../../core/services/characters/manage-characters/manage-characters.service';
@@ -24,16 +25,15 @@ export class CharactersDetailsComponent {
     private manageCharactersService: ManageCharactersService,
     private router: Router
   ) {
-
-    // Retrieve favorite characters from local storage
+    // Recuperar personagens favoritos do armazenamento local
     const storedFavorites = localStorage.getItem('favoriteList');
     this.favoriteList = storedFavorites ? JSON.parse(storedFavorites) : [];
 
-    // Subscribe to route params to get the character ID and fetch character details
+    // Subscribe para rotear parâmetros para obter o ID do personagem e buscar detalhes do personagem
     this.route.params.subscribe((params) => {
       this.id = +params['id'];
 
-      // Fetch character details and initialize
+      // Buscar detalhes do personagem e inicializar
       firstValueFrom(this.manageCharactersService.getOnlyCharacter(this.id))
         .then((data: CharacterInterface) => {
           this.character = data;
@@ -46,7 +46,7 @@ export class CharactersDetailsComponent {
     });
   }
 
-  // Load episodes related to the character
+  // Carregar episódios relacionados ao personagem
   loadEpisodes() {
     if (this.character && this.character.episode.length > 0) {
       const firstEpisodeUrl = this.character.episode[0];
@@ -68,12 +68,12 @@ export class CharactersDetailsComponent {
     }
   }
 
-  // Initialize the favorite status of the character
+  // Inicialize o status favorito do personagem
   initializeCharacter() {
     this.favorite = this.favoriteList.some((char) => char.id === this.character?.id);
   }
 
-    // Toggle the favorite status of the character
+  // Alternar o status favorito do personagem
   onFavorite(): void {
     this.favorite = !this.favorite;
 
@@ -84,25 +84,25 @@ export class CharactersDetailsComponent {
     }
   }
 
-  // Add the character to the favorites list
+  // Adicione o personagem à lista de favoritos
   addToFavorites(): void {
     const isCharacterAlreadyFavorited = this.favoriteList.find(
       (char) => char.id === this.character?.id
     );
+
     if (!isCharacterAlreadyFavorited) {
       this.favoriteList.push(this.character!);
       localStorage.setItem('favoriteList', JSON.stringify(this.favoriteList));
     }
   }
 
-  // Remove the character from the favorites list
+  // Remova o personagem da lista de favoritos
   removeFromFavorites(): void {
     const updatedList = this.favoriteList.filter((char) => char.id !== this.character?.id);
     localStorage.setItem('favoriteList', JSON.stringify(updatedList));
   }
 
-
-  // Navigate back to the list of characters
+  // Navegue de volta para a lista de personagens
   onClick() {
     this.router.navigate(['home/list-characters']);
   }

@@ -16,6 +16,7 @@
   right: 0;
   background-color: #00b5cc;
   padding: 10px;
+
   @media screen and (max-width: 750px) {
     position: absolute;
     z-index: 1;
@@ -48,15 +49,14 @@
   border-left: none;
 }
 
-
 #skeleton-cards-container,#cards-container{
-
   @media screen and (max-width: 900px) {
    display: flex;
    justify-content: center;
   }
+
   @media screen and (min-width: 2100px) {
     display: flex;
     justify-content: center;
-   }
+  }
 }

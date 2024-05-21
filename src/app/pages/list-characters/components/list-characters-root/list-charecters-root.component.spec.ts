@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ListCharectersRootComponent } from './list-charecters-root.component';
 
 describe('ListCharectersRootComponent', () => {

@@ -2,31 +2,31 @@
   <!-- Header section -->
   <header class="character-details-header d-flex justify-content-between">
     <div class="character-details-title-container">
-      <!-- Character name -->
+      <!-- Nome do personagem -->
       <h1 class="character-details-title-text">{{character?.name}}</h1>
 
-      <!-- Favorite icon (border) - displayed when not favorited -->
+      <!--Ícone favorito (borda) - exibido quando não é favorito -->
       <div class="favorite-icon" *ngIf="character && !favorite" (click)="onFavorite()">
         <mat-icon class="character-details-icon">favorite_border</mat-icon>
       </div>
 
-      <!-- Favorite icon (filled) - displayed when favorited -->
+      <!-- Ícone favorito (preenchido) - exibido quando adicionado como favorito -->
       <div class="favorite-icon" *ngIf="character && favorite" (click)="onFavorite()">
         <mat-icon class="character-details-icon">favorite</mat-icon>
       </div>
 
-      <!-- Character species -->
+      <!-- Espécies de personagens -->
       <h5>
         {{character?.species}}
       </h5>
 
-      <!-- Character status -->
+      <!-- Status do personagem -->
       <h5>
         {{character?.status}}
       </h5>
     </div>
 
-    <!-- Container for character image -->
+    <!-- Contêiner para imagem do personagem -->
     <div class="character-image-container">
       <!-- Character image -->
       <img class="character-image" src="{{character?.image}}" alt="" srcset="">
@@ -53,7 +53,7 @@
   <!-- Footer section -->
   <footer class="d-flex justify-content-center" id="character-footer">
     <button class="character-back-button" (click)="onClick()">Voltar</button>
-    <!-- Button to navigate back -->
-    <!-- Footer content of the component goes here, if needed -->
+    <!-- Botão para voltar -->
+    <!-- O conteúdo do rodapé do componente vai aqui, se necessário -->
   </footer>
 </section>
