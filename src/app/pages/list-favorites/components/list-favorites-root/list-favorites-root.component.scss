@@ -1,7 +1,9 @@
 .list-container {
+  background-image: url('../../../../../assets/universe.png');
   width: 100%;
   height: 100%;
   padding: 20px 55px 0px 55px;
+  color: #4E823A;
 
   @media screen and (max-width: 800px) {
     padding: 20px 15px 0px 15px;
@@ -15,6 +17,7 @@
   left: 0;
   right: 0;
   margin: 10px;
+
   @media screen and (max-width: 800px) {
     position: absolute;
     z-index: 1;
@@ -28,7 +31,7 @@
   width: 100%;
   max-width: 1000px;
   border-radius: 12px 0px 0px 12px;
-  border: 1px solid #474747;
+  border: 1px solid #4E823A;
   height: 50px;
   border-right: none;
   padding-left: 10px;

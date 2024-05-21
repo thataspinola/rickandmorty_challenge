@@ -1,8 +1,10 @@
 .card{
   margin: 20px 10px 20px 10px;
-  width: 279px;
-  min-height: 520px;
+  min-height: 500px;
   box-sizing: border-box;
+  background-image: url('../../../../../assets/universe.png');
+  border: #4E823A solid 1px;
+  color: #4E823A;
 }
 
 .card-body{
@@ -18,7 +20,7 @@
 
 .card-name {
   display: block;
-  color: #000;
+  color: #4E823A;
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
@@ -39,6 +41,8 @@
   display: inline-block;
 }
 
-.btn-primary{
+.btn-colored{
+  background-color: #4E823A;
+  color: #fff;
   width: 50%;
 }

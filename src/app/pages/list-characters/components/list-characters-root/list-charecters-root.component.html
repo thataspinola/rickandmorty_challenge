@@ -24,7 +24,7 @@
   <!-- Skeleton Cards Loading -->
   <section class="d-flex flex-row flex-wrap" *ngIf="isLoading === true" style="margin-top: 50px;">
     <!-- Skeleton cards displayed while loading data -->
-    <div class=" col-xl-auto col-lg-4 col-md-5 col-sm-12 col-xs-12" *ngFor="let item of mockData" id="skeleton-cards-container">
+    <div class="col-lg-3 col-md-5 col-sm-12 col-xs-12" *ngFor="let item of mockData" id="skeleton-cards-container">
       <app-card-skeleton-root></app-card-skeleton-root>
     </div>
   </section>
@@ -32,7 +32,7 @@
   <!-- Cards Container -->
   <div class="d-flex flex-row flex-wrap" *ngIf="isLoading === false &&  this.listFilteredCharacters.length != 0" style="margin-top: 50px;">
     <!-- Actual cards displayed when data is loaded -->
-    <div class=" col-xl-auto col-lg-4 col-md-5 col-sm-12 col-xs-12" *ngFor="let item of listFilteredCharacters" id="cards-container">
+    <div class="col-lg-3 col-md-5 col-sm-12 col-xs-12" *ngFor="let item of listFilteredCharacters" id="cards-container">
       <app-card-menu [dataCard]="item"></app-card-menu>
     </div>
   </div>

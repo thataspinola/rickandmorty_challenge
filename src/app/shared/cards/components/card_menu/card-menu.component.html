@@ -6,7 +6,7 @@
     <!-- Contêiner de cabeçalho: nome, espécie e status -->
     <div class="card-header-container">
       <!-- Nome e Espécie -->
-      <div class="col-6">
+      <div class="col-8">
         <span class="card-name">
           {{dataCard.name}}
         </span>
@@ -17,14 +17,14 @@
       <div class="col-4">
         <span>{{dataCard.status}}</span>
         <!-- Círculo de status com cor de fundo condicional -->
-        <div class="status-circle" [ngStyle]="{'background-color': (dataCard.status == 'Dead') ? '#ff0000' : '#00ff00' }">
+        <div class="span status-circle" [ngStyle]="{'background-color': (dataCard.status == 'Dead') ? '#ff0000' : '#00ff00' }">
         </div>
       </div>
     </div>
 
     <!-- Botão para ver mais detalhes -->
     <div>
-      <button href="" class="btn btn-primary" (click)="onClick()">Ver Mais</button>
+      <button href="" class="btn btn-colored" (click)="onClick()">Ver Mais</button>
     </div>
   </div>
 </div>

@@ -5,6 +5,8 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  background-image: url('../../../../../assets/universe.png');
+  color: #4E823A;
 }
 
 .character-details-header {
@@ -23,7 +25,7 @@
 }
 
 .character-details-icon {
-  color: #00B5CC;
+  color: #4E823A;
   text-align: center;
   width: 30px;
   height: 30px;
@@ -36,7 +38,7 @@
 
 .character-back-button {
   border-radius: 16px;
-  background: #00B5CC;
+  background: #4E823A;
   border: none;
   color: #ffffff;
   width: 259px;
